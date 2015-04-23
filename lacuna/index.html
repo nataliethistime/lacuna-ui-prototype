@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 <head>
   <title>Lacuna Demo</title>
@@ -10,6 +12,11 @@
     /* Fix tooltips & drops hiding behind menus */
     .tooltip, .drop {
       z-index: 9999999999;
+    }
+
+    /* Position Menu button */
+    #menu-button {
+      margin-top: 100px;
     }
   </style>
 </head>
@@ -30,10 +37,15 @@
     }
   </script>
 
+  <div class="ui sidebar">
+    <a class="item" href="http://community.lacunaexpanse.com/forums/general" target="_blank">
+      <i class="comments icon"></i> Ideas
+    </a>
+  </div>
   <div class="ui large blue inverted fixed top menu">
 
     <div class="left menu">
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="Star Map">
+      <a class="item" data-tooltip-position="right middle" data-tooltip="Star Map">
         <i class="map big icon"></i>
       </a>
       <a class="item" data-tooltip-position="bottom center" data-tooltip="Mail">
@@ -92,6 +104,11 @@
     </div>
   </div>
 
+  <!-- Menu button -->
+  <div class="ui blue big right attached fixed icon button" id="menu-button">
+    <i class="content icon"></i>
+  </div>
+
   <div class="ui large blue inverted bottom fixed menu">
 
     <div class="left menu">
@@ -138,6 +155,9 @@
     </div>
 
   </div>
+  <div class="pusher">
+    <!-- This is the main content of the page. -->
+  </div>
 
 </body>
 
@@ -152,6 +172,15 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+
+  /////////////
+  // Sidebar //
+  /////////////
+
+  $('#menu-button').click(function() {
+    $('.ui.sidebar').sidebar('toggle');
+  });
+
 
   //////////
   // Food //
