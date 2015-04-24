@@ -14,16 +14,25 @@
       z-index: 9999999999;
     }
 
-    /* Position Menu button */
-    #menu-button {
-      margin-top: 100px;
+    #main-wrapper {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('http://d16cbq0l6kkf21.cloudfront.net/assets/planet_side/surface-p35.jpg');
+      background-repeat: repeat;
+    }
+
+    .lacuna-center-menu {
+      /* This makes the menu only as wide as needed instead of using the entire width available. */
+      width: auto;
+      display: inline-block;
+      height: auto;
     }
   </style>
 </head>
 <body>
 
   <script type="text/javascript">
-    // This message is just a pre caution to make sure people know what the deal with this is.
+    // This message is just a precaution to make sure people know what the deal with this is.
     if (window.location.href.indexOf('github') > -1) {
       var arr = [
         'Hello!',
@@ -37,126 +46,204 @@
     }
   </script>
 
-  <div class="ui sidebar">
-    <a class="item" href="http://community.lacunaexpanse.com/forums/general" target="_blank">
-      <i class="comments icon"></i> Ideas
+  <!-- Side bar -->
+  <div class="ui left vertical inverted sidebar menu">
+
+    <!--
+      ===========
+      == Links ==
+      ===========
+    -->
+    <div class="ui horizontal inverted divider">
+      Links
+    </div>
+    <a class="item">
+      <i class="rocket icon"></i>
+      About
+    </a>
+    <a class="item" target="_blank" href="http://us1.lacunaexpanse.com/starmap/">
+      <i class="map icon"></i>
+      Alliance Map
+    </a>
+    <a class="item" target="_blank" href="http://us1.lacunaexpanse.com/changes.txt">
+      <i class="code icon"></i>
+      Changes Log
+    </a>
+    <a class="item" target="_blank" href="http://community.lacunaexpanse.com/forums">
+      <i class="comments layout icon"></i>
+      Forums
+    </a>
+    <a class="item" target="_blank" href="http://www.lacunaexpanse.com/help/">
+      <i class="student icon"></i>
+      Help
+    </a>
+    <a class="item">
+      <i class="add user icon"></i>
+      Invite a Friend
+    </a>
+    <a class="item">
+      <i class="options icon"></i>
+      Options
+    </a>
+    <!--  TODO: implement this! -->
+    <a class="item">
+      <i class="wait icon"></i>
+      Server Clock
+    </a>
+    <a class="item" target="_blank" href="http://www.lacunaexpanse.com/terms/">
+      <i class="info circle icon"></i>
+      Terms of Service
+    </a>
+    <a class="item" target="_blank" href="http://lacunaexpanse.com/tutorial/">
+      <i class="marker icon"></i>
+      Tutorial
+    </a>
+    <a class="item" target="_blank" href="http://community.lacunaexpanse.com/wiki">
+      <i class="share alternate icon"></i>
+      Wiki
+    </a>
+
+    <!--
+      ==============
+      == Colonies ==
+      ==============
+    -->
+    <div class="ui horizontal inverted divider">
+      Colonies
+    </div>
+    <a class="item">
+      Tatooine
+    </a>
+    <a class="item">
+      Alderaan
+    </a>
+
+    <!--
+      ==============
+      == Stations ==
+      ==============
+    -->
+    <div class="ui horizontal inverted divider">
+      Stations
+    </div>
+    <a class="item">
+      The Death Star
+    </a>
+    <a class="item">
+      Rebel Base
     </a>
   </div>
-  <div class="ui large blue inverted fixed top menu">
 
-    <div class="left menu">
-      <a class="item" data-tooltip-position="right middle" data-tooltip="Star Map">
-        <i class="map big icon"></i>
-      </a>
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="Mail">
-        <i class="mail big icon"></i>
-        <div class="ui red circular label">69</div>
-      </a>
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="Profile Options">
-        <i class="options big icon"></i>
-      </a>
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="Essentia">
-        <i class="money big icon"></i>
-        <div class="ui red floated right circular label">12 345</div>
-      </a>
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="Activate Self Destruct">
-        <i class="bomb big icon"></i>
-      </a>
-
-      <!-- TODO: move this into a side bar -->
-      <div class="ui dropdown simple item">
-        <i class="dropdown icon"></i>
-        <div class="text">1vasari</div>
-        <div class="menu">
-          <!-- TODO: make these link to things -->
-          <div class="item">Alliance Map</div>
-          <div class="item">Changes Log</div>
-          <div class="item">Forums</div>
-          <div class="item">Help</div>
-          <div class="item">Ideas</div>
-          <div class="item">Server Clock</div>
-          <div class="item">Terms of Service</div>
-          <div class="item">Wiki</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="right menu">
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="Invite a Friend">
-        <i class="add user big icon"></i>
-      </a>
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="Tutorial">
-        <i class="student big icon"></i>
-      </a>
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="Support">
-        <i class="bug big icon"></i>
-      </a>
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="Universe Rankings">
-        <i class="find big icon"></i>
-      </a>
-      <a class="item" data-tooltip-position="bottom center" data-tooltip="About">
-        <i class="rocket big icon"></i>
-      </a>
-      <a class="item" data-tooltip-position="left middle" data-tooltip="Sign Out">
-        <i class="sign out big icon"></i>
-      </a>
-    </div>
-  </div>
-
-  <!-- Menu button -->
-  <div class="ui blue big right attached fixed icon button" id="menu-button">
-    <i class="content icon"></i>
-  </div>
-
-  <div class="ui large blue inverted bottom fixed menu">
-
-    <div class="left menu">
-
-      <!-- Food -->
-      <div class="item" id="foodItem">
-        <i class="food big icon"></i>
-        1.5 B / hr
-        <div class="ui red floating circular label">5&nbsp;B</div>
-        <div class="ui bottom attached yellow progress" id="foodProgress">
-          <div class="bar"></div>
-        </div>
-      </div>
-
-      <!-- Ore -->
-      <div class="item">
-        <i class="diamond big icon"></i>
-        1.5 B / hr
-        <div class="ui red floating circular label">10&nbsp;B</div>
-        <div class="ui bottom attached yellow progress" id="oreProgress">
-          <div class="bar"></div>
-        </div>
-      </div>
-
-      <!-- Water -->
-      <div class="item">
-        <i class="theme big icon"></i>
-        1.5 B / hr
-        <div class="ui red floating circular label">15&nbsp;B</div>
-        <div class="ui bottom attached yellow progress" id="waterProgress">
-          <div class="bar"></div>
-        </div>
-      </div>
-
-      <!-- Energy -->
-      <div class="item">
-        <i class="lightning big icon"></i>
-        1.5 B / hr
-        <div class="ui red floating circular label">20&nbsp;B</div>
-        <div class="ui bottom attached yellow progress" id="energyProgress">
-          <div class="bar"></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
   <div class="pusher">
+
     <!-- This is the main content of the page. -->
+    <div id="main-wrapper" class="ui segment">
+      <div class="ui grid">
+
+        <div class="center aligned eight column row">
+
+          <div class="ui blue inverted menu lacuna-center-menu">
+            <a class="item" data-tooltip-position="bottom center" data-tooltip="Star Map">
+              <i class="map big icon"></i>
+            </a>
+            <a class="item" data-tooltip-position="bottom center" data-tooltip="Mail">
+              <i class="mail big icon"></i>
+              <div class="ui red circular label">69</div>
+            </a>
+            <a class="item" data-tooltip-position="bottom center" data-tooltip="Essentia">
+              <i class="money big icon"></i>
+              <div class="ui red floated right circular label">12 345</div>
+            </a>
+            <a class="item" data-tooltip-position="bottom center" data-tooltip="Activate Self Destruct">
+              <i class="bomb big icon"></i>
+            </a>
+            <a class="item" data-tooltip-position="bottom center" data-tooltip="Universe Rankings">
+              <i class="find big icon"></i>
+            </a>
+            <a class="item" data-tooltip-position="bottom center" data-tooltip="Sign Out">
+              <i class="sign out big icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu button -->
+        <div class="row">
+          <div class="ui blue big right attached fixed icon button" id="menu-button">
+            <i class="content icon"></i>
+          </div>
+        </div>
+
+        <div class="center aligned eight column row">
+          <!-- ui blue inverted menu lacuna-center-menu -->
+          <div class="ui blue inverted icon menu lacuna-center-menu">
+
+            <!-- Food -->
+            <div class="item" id="foodItem">
+              <i class="food big icon"></i>
+              1.5 B / hr
+              <div class="ui red floating circular label">5&nbsp;B</div>
+              <div class="ui bottom attached yellow progress" id="foodProgress">
+                <div class="bar"></div>
+              </div>
+            </div>
+
+            <!-- Ore -->
+            <div class="item">
+              <i class="diamond big icon"></i>
+              1.5 B / hr
+              <div class="ui red floating circular label">10&nbsp;B</div>
+              <div class="ui bottom attached yellow progress" id="oreProgress">
+                <div class="bar"></div>
+              </div>
+            </div>
+
+            <!-- Water -->
+            <div class="item">
+              <i class="theme big icon"></i>
+              1.5 B / hr
+              <div class="ui red floating circular label">15&nbsp;B</div>
+              <div class="ui bottom attached yellow progress" id="waterProgress">
+                <div class="bar"></div>
+              </div>
+            </div>
+
+            <!-- Energy -->
+            <div class="item">
+              <i class="lightning big icon"></i>
+              1.5 B / hr
+              <div class="ui red floating circular label">20&nbsp;B</div>
+              <div class="ui bottom attached yellow progress" id="energyProgress">
+                <div class="bar"></div>
+              </div>
+            </div>
+
+            <!-- Trash -->
+            <div class="item">
+              <i class="trash big icon"></i>
+              750 M / hr
+              <div class="ui red floating circular label">20&nbsp;B</div>
+              <div class="ui bottom attached yellow progress" id="trashProgress">
+                <div class="bar"></div>
+              </div>
+            </div>
+
+            <!-- Happiness -->
+            <div class="item">
+              <i class="smile big icon"></i>
+              100 B / hr
+              <div class="ui red floating circular label">250&nbsp;T</div>
+            </div>
+
+            <!-- Plots -->
+            <div class="item">
+              <i class="block layout big icon"></i>
+              60 Buildings
+              <div class="ui red floating circular label">10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </body>
@@ -221,6 +308,15 @@ $(document).ready(function() {
   ////////////
 
   $('#energyProgress').progress({
+    percent: 100
+  });
+
+
+  ////////////
+  // Trash //
+  ////////////
+
+  $('#trashProgress').progress({
     percent: 100
   });
 });
