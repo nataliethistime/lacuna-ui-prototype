@@ -14,19 +14,30 @@
       z-index: 9999999999;
     }
 
-    #main-wrapper {
+    #main {
       width: 100vw;
       height: 100vh;
       background-image: url('http://d16cbq0l6kkf21.cloudfront.net/assets/planet_side/surface-p35.jpg');
       background-repeat: repeat;
+      padding: 15px;
     }
 
-    .lacuna-center-menu {
-      /* This makes the menu only as wide as needed instead of using the entire width available. */
+    #top-menu {
+      /* This makes the menu only as wide as it's content instead of being fluid */
       width: auto;
       display: inline-block;
       height: auto;
+
+      position: fixed;
+      margin: 0;
     }
+
+    #bottom-menu {
+      position: fixed;
+      bottom: 15px;
+      margin: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -137,111 +148,102 @@
   <div class="pusher">
 
     <!-- This is the main content of the page. -->
-    <div id="main-wrapper" class="ui segment">
-      <div class="ui grid">
+    <div id="main" class="ui segment">
 
-        <div class="center aligned eight column row">
+      <div class="ui blue big fixed icon button" id="menu-button">
+        <i class="content icon"></i>
+      </div>
 
-          <div class="ui blue inverted menu lacuna-center-menu">
-            <a class="item" data-tooltip-position="bottom center" data-tooltip="Star Map">
-              <i class="map big icon"></i>
-            </a>
-            <a class="item" data-tooltip-position="bottom center" data-tooltip="Mail">
-              <i class="mail big icon"></i>
-              <div class="ui red circular label">69</div>
-            </a>
-            <a class="item" data-tooltip-position="bottom center" data-tooltip="Essentia">
-              <i class="money big icon"></i>
-              <div class="ui red floated right circular label">12 345</div>
-            </a>
-            <a class="item" data-tooltip-position="bottom center" data-tooltip="Activate Self Destruct">
-              <i class="bomb big icon"></i>
-            </a>
-            <a class="item" data-tooltip-position="bottom center" data-tooltip="Universe Rankings">
-              <i class="find big icon"></i>
-            </a>
-            <a class="item" data-tooltip-position="bottom center" data-tooltip="Sign Out">
-              <i class="sign out big icon"></i>
-            </a>
+      <div class="ui blue inverted menu" id="top-menu">
+        <a class="item" data-tooltip-position="bottom center" data-tooltip="Star Map">
+          <i class="map big icon"></i>
+        </a>
+        <a class="item" data-tooltip-position="bottom center" data-tooltip="Mail">
+          <i class="mail big icon"></i>
+          <div class="ui red circular label">69</div>
+        </a>
+        <a class="item" data-tooltip-position="bottom center" data-tooltip="Essentia">
+          <i class="money big icon"></i>
+          <div class="ui red floated right circular label">12 345</div>
+        </a>
+        <a class="item" data-tooltip-position="bottom center" data-tooltip="Activate Self Destruct">
+          <i class="bomb big icon"></i>
+        </a>
+        <a class="item" data-tooltip-position="bottom center" data-tooltip="Universe Rankings">
+          <i class="find big icon"></i>
+        </a>
+        <a class="item" data-tooltip-position="bottom center" data-tooltip="Sign Out">
+          <i class="sign out big icon"></i>
+        </a>
+      </div>
+
+
+      <div class="ui blue inverted icon menu" id="bottom-menu">
+
+        <!-- Food -->
+        <div class="item" id="foodItem">
+          <i class="food big icon"></i>
+          1.5 B / hr
+          <div class="ui red floating circular label">5&nbsp;B</div>
+          <div class="ui bottom attached yellow progress" id="foodProgress">
+            <div class="bar"></div>
           </div>
         </div>
 
-        <!-- Menu button -->
-        <div class="row">
-          <div class="ui blue big right attached fixed icon button" id="menu-button">
-            <i class="content icon"></i>
+        <!-- Ore -->
+        <div class="item">
+          <i class="diamond big icon"></i>
+          1.5 B / hr
+          <div class="ui red floating circular label">10&nbsp;B</div>
+          <div class="ui bottom attached yellow progress" id="oreProgress">
+            <div class="bar"></div>
           </div>
         </div>
 
-        <div class="center aligned eight column row">
-          <!-- ui blue inverted menu lacuna-center-menu -->
-          <div class="ui blue inverted icon menu lacuna-center-menu">
-
-            <!-- Food -->
-            <div class="item" id="foodItem">
-              <i class="food big icon"></i>
-              1.5 B / hr
-              <div class="ui red floating circular label">5&nbsp;B</div>
-              <div class="ui bottom attached yellow progress" id="foodProgress">
-                <div class="bar"></div>
-              </div>
-            </div>
-
-            <!-- Ore -->
-            <div class="item">
-              <i class="diamond big icon"></i>
-              1.5 B / hr
-              <div class="ui red floating circular label">10&nbsp;B</div>
-              <div class="ui bottom attached yellow progress" id="oreProgress">
-                <div class="bar"></div>
-              </div>
-            </div>
-
-            <!-- Water -->
-            <div class="item">
-              <i class="theme big icon"></i>
-              1.5 B / hr
-              <div class="ui red floating circular label">15&nbsp;B</div>
-              <div class="ui bottom attached yellow progress" id="waterProgress">
-                <div class="bar"></div>
-              </div>
-            </div>
-
-            <!-- Energy -->
-            <div class="item">
-              <i class="lightning big icon"></i>
-              1.5 B / hr
-              <div class="ui red floating circular label">20&nbsp;B</div>
-              <div class="ui bottom attached yellow progress" id="energyProgress">
-                <div class="bar"></div>
-              </div>
-            </div>
-
-            <!-- Trash -->
-            <div class="item">
-              <i class="trash big icon"></i>
-              750 M / hr
-              <div class="ui red floating circular label">20&nbsp;B</div>
-              <div class="ui bottom attached yellow progress" id="trashProgress">
-                <div class="bar"></div>
-              </div>
-            </div>
-
-            <!-- Happiness -->
-            <div class="item">
-              <i class="smile big icon"></i>
-              100 B / hr
-              <div class="ui red floating circular label">250&nbsp;T</div>
-            </div>
-
-            <!-- Plots -->
-            <div class="item">
-              <i class="block layout big icon"></i>
-              60 Buildings
-              <div class="ui red floating circular label">10</div>
-            </div>
+        <!-- Water -->
+        <div class="item">
+          <i class="theme big icon"></i>
+          1.5 B / hr
+          <div class="ui red floating circular label">15&nbsp;B</div>
+          <div class="ui bottom attached yellow progress" id="waterProgress">
+            <div class="bar"></div>
           </div>
         </div>
+
+        <!-- Energy -->
+        <div class="item">
+          <i class="lightning big icon"></i>
+          1.5 B / hr
+          <div class="ui red floating circular label">20&nbsp;B</div>
+          <div class="ui bottom attached yellow progress" id="energyProgress">
+            <div class="bar"></div>
+          </div>
+        </div>
+
+        <!-- Trash -->
+        <div class="item">
+          <i class="trash big icon"></i>
+          750 M / hr
+          <div class="ui red floating circular label">20&nbsp;B</div>
+          <div class="ui bottom attached yellow progress" id="trashProgress">
+            <div class="bar"></div>
+          </div>
+        </div>
+
+        <!-- Happiness -->
+        <div class="item">
+          <i class="smile big icon"></i>
+          100 B / hr
+          <div class="ui red floating circular label">250&nbsp;T</div>
+        </div>
+
+        <!-- Plots -->
+        <div class="item">
+          <i class="block layout big icon"></i>
+          60 Buildings
+          <div class="ui red floating circular label">10</div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -259,6 +261,24 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+
+  ///////////
+  // Menus //
+  ///////////
+
+  // This chunk of code will center the top and bottom menus. Sadly, Semantic UI doesn't support
+  // this, so we have to use an ugly hack, instead. :/
+
+  var docWidth = $(document.body).width();
+  var padding = parseInt($('#main').css('padding'), 10);
+  var topWidth = $('#top-menu').width() - padding;
+  var bottomWidth = $('#bottom-menu').width() - padding;
+
+  var topLeftVal = (docWidth - topWidth) / 2;
+  var bottomLeftVal = (docWidth - bottomWidth) / 2;
+
+  $('#top-menu').css('left', topLeftVal);
+  $('#bottom-menu').css('left', bottomLeftVal);
 
   /////////////
   // Sidebar //
