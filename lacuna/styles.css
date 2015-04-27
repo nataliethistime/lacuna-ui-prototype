@@ -1,0 +1,81 @@
+body {
+  overflow: hidden;
+}
+
+/* Stop tooltips from hding behind anything. */
+.tooltip {
+  z-index: 9999999999;
+}
+
+#main {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding: 15px;
+}
+
+#top-menu, #bottom-menu {
+  position: fixed;
+  margin: 0;
+  z-index: 1000;
+}
+
+#sidebar-button {
+  position: fixed;
+  z-index: 1000;
+}
+
+/* This makes the menu only as wide as it's content instead of being fluid */
+#top-menu {
+  width: auto;
+  display: inline-block;
+  height: auto;
+}
+
+#bottom-menu {
+  bottom: 15px;
+}
+
+#buildings-container {
+
+  /* Take up the entire screen. */
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url('http://d16cbq0l6kkf21.cloudfront.net/assets/planet_side/surface-p35.jpg');
+  background-repeat: repeat;
+}
+
+.building {
+  color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+}
+
+.building:hover {
+  border: 1px dashed #ffffff;
+  margin: -1px;
+}
+
+.building-level {
+
+  font-size: 2em;
+
+  /* Horizontal and vertical centering. */
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  /* Hide until mouse over. */
+  visibility: hidden;
+}
+
+.building:hover div.building-level {
+  visibility: visible;
+}
