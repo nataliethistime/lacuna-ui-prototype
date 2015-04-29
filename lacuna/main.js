@@ -73,6 +73,7 @@ $(document).ready(function() {
 
   var $body = $(document.body);
   var $draggable = $('#buildings-draggable');
+  var $container = $('#buildings-container');
   var planetSize = size * 11;
 
   // Center the planet view
@@ -84,7 +85,7 @@ $(document).ready(function() {
   $draggable.draggable({
     drag: function(event, ui) {
       // Move the background around according to the movement of the buildings.
-      $('#buildings-container').css(
+      $container.css(
         'background-position', ui.offset.left + 'px ' + ui.offset.top + 'px');
     }
   });
