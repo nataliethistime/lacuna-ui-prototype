@@ -26,6 +26,11 @@ $(document).ready(function() {
   $('#top-menu').css('left', topLeftVal);
   $('#bottom-menu').css('left', bottomLeftVal);
 
+  // Activate the popups on all the menu buttons.
+  $('#top-menu a').popup({
+    variation: 'inverted'
+  });
+
   /////////////
   // Sidebar //
   /////////////
