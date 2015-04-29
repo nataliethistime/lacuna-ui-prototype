@@ -35,51 +35,6 @@ $(document).ready(function() {
   });
 
 
-  //////////
-  // Food //
-  //////////
-
-  $('#foodProgress').progress({
-    percent: 25
-  });
-
-
-  /////////
-  // Ore //
-  /////////
-
-  $('#oreProgress').progress({
-    percent: 50
-  });
-
-
-  ///////////
-  // Water //
-  ///////////
-
-  $('#waterProgress').progress({
-    percent: 75
-  });
-
-
-  ////////////
-  // Energy //
-  ////////////
-
-  $('#energyProgress').progress({
-    percent: 100
-  });
-
-
-  ////////////
-  // Trash //
-  ////////////
-
-  $('#trashProgress').progress({
-    percent: 100
-  });
-
-
   ///////////////
   // Buildings //
   ///////////////
