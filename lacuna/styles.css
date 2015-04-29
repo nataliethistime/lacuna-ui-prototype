@@ -20,9 +20,17 @@ body {
   z-index: 1000;
 }
 
-#sidebar-button {
+#left-sidebar-button, #right-sidebar-button {
   position: fixed;
   z-index: 1000;
+}
+
+#left-sidebar-button {
+  left: 15px;
+}
+
+#right-sidebar-button {
+  right: 15px;
 }
 
 /* This makes the menu only as wide as it's content instead of being fluid */

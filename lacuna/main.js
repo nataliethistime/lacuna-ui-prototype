@@ -31,12 +31,16 @@ $(document).ready(function() {
     variation: 'inverted'
   });
 
-  /////////////
-  // Sidebar //
-  /////////////
+  //////////////
+  // Sidebars //
+  //////////////
 
-  $('#sidebar-button').click(function() {
-    $('.ui.sidebar').sidebar('toggle');
+  $('#left-sidebar-button').click(function() {
+    $('.ui.sidebar.left').sidebar('toggle');
+  });
+
+  $('#right-sidebar-button').click(function() {
+    $('.ui.sidebar.right').sidebar('toggle');
   });
 
 

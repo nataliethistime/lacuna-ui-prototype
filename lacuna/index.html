@@ -23,8 +23,15 @@
     }
   </script>
 
-  <!-- Side bar -->
+
+  <!--
+    ==================
+    == LEFT SIDEBAR ==
+    ==================
+  -->
+
   <div class="ui left vertical inverted sidebar menu">
+
 
     <!--
       ===========
@@ -79,6 +86,16 @@
       <i class="share alternate icon"></i>
       Wiki
     </a>
+  </div>
+
+
+  <!--
+    ===================
+    == RIGHT SIDEBAR ==
+    ===================
+  -->
+
+  <div class="ui right vertical inverted sidebar menu">
 
     <!--
       ==============
@@ -116,8 +133,12 @@
     <!-- This is the main content of the page. -->
     <div id="main" class="ui segment">
 
-      <div class="ui blue big fixed icon button" id="sidebar-button">
+      <div class="ui blue big icon button" id="left-sidebar-button">
         <i class="content icon"></i>
+      </div>
+
+      <div class="ui blue big icon button" id="right-sidebar-button">
+        <i class="world icon"></i>
       </div>
 
       <div class="ui blue inverted menu" id="top-menu">
@@ -139,7 +160,7 @@
           <i class="find big icon"></i>
         </a>
         <a class="item" data-content="Sign Out">
-          <i class="sign out big icon"></i>
+          <i class="power big icon"></i>
         </a>
       </div>
 
