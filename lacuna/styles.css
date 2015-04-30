@@ -20,16 +20,16 @@ body {
   z-index: 1000;
 }
 
-#left-sidebar-button, #right-sidebar-button {
+#left-sidebar-button-wrapper, #right-sidebar-button-wrapper {
   position: fixed;
   z-index: 1000;
 }
 
-#left-sidebar-button {
+#left-sidebar-button-wrapper {
   left: 15px;
 }
 
-#right-sidebar-button {
+#right-sidebar-button-wrapper {
   right: 15px;
 }
 
