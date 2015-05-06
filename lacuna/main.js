@@ -53,6 +53,8 @@ $(document).ready(function() {
   var $buildingsEl = $('#buildings-draggable');
   var range = _.range(-5, 6);
   var size = 100;
+  var planetSize = size * 11;
+  var scrollDistance = size / 2;
 
   _.each(range, function(x) {
     _.each(range, function(y) {
@@ -78,19 +80,62 @@ $(document).ready(function() {
   var $body = $(document.body);
   var $draggable = $('#buildings-draggable');
   var $container = $('#buildings-container');
-  var planetSize = size * 11;
+
+  var top = ($body.height() - planetSize) / 2;
+  var left = ($body.width() - planetSize) / 2;
+
+  var move = function(options) {
+
+    top += options.y || 0;
+    left += options.x || 0;
+
+    var tempTop = top + 'px';
+    var tempLeft = left + 'px';
+
+    $draggable.css({
+      top: tempTop,
+      left: tempLeft
+    });
+
+    // Move the planet background as well.
+    $container.css(
+      'background-position', [tempLeft, tempTop].join(' '));
+  };
 
   // Center the planet view
-  $draggable.css({
-    top: ($body.height() - planetSize) / 2,
-    left: ($body.width() - planetSize) / 2
+  move({
+    y: 0,
+    x: 0
   });
 
   $draggable.draggable({
     drag: function(event, ui) {
-      // Move the background around according to the movement of the buildings.
-      $container.css(
-        'background-position', ui.offset.left + 'px ' + ui.offset.top + 'px');
+
+      move({
+        x: ui.position.left - left,
+        y: ui.position.top - top
+      });
+
+      // Make sure jQuery doesn't override the position that move() sets the view to.
+      ui.position.left = left;
+      ui.position.top = top;
+    }
+  });
+
+  // This is pretty much a copy of http://stackoverflow.com/a/22518932/1978973.
+  // In adition to the above Stackoverflow answer, I addwed listening for the (now standard)
+  // 'wheel' event.
+  $(window).bind('wheel mousewheel DOMMouseScroll', function(event) {
+    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+      // scroll up
+      move({
+        y: scrollDistance * -1
+      });
+    } else {
+      // scroll down
+      move({
+        y: scrollDistance
+      });
     }
   });
 });
