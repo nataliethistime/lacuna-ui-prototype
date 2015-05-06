@@ -122,20 +122,10 @@ $(document).ready(function() {
     }
   });
 
-  // This is pretty much a copy of http://stackoverflow.com/a/22518932/1978973.
-  // In adition to the above Stackoverflow answer, I addwed listening for the (now standard)
-  // 'wheel' event.
-  $(window).bind('wheel mousewheel DOMMouseScroll', function(event) {
-    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-      // scroll up
-      move({
-        y: scrollDistance * -1
-      });
-    } else {
-      // scroll down
-      move({
-        y: scrollDistance
-      });
-    }
+  $(window).mousewheel(function(event) {
+    move({
+      x: event.deltaX * event.deltaFactor,
+      y: event.deltaY * event.deltaFactor
+    })
   });
 });
