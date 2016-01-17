@@ -1,6 +1,6 @@
 # Lacuna UI Prototype
 
-This repository is the resting place of my initial design ideas when I set about the task of making a new UI for [The Lacuna Expanse](lacunaexpanse.com). You can see it online [here](http://1vasari.github.io/lacuna-ui-prototype/).
+This repository is the resting place of my initial design ideas when I set about the task of making a new UI for [The Lacuna Expanse](lacunaexpanse.com). You can see it online [here](http://1vasari.com/lacuna-ui-prototype/).
 
 # Today
 
