@@ -6,7 +6,7 @@ $(document).ready(function() {
   // Globals //
   /////////////
 
-  window.assetsUrl = '//d16cbq0l6kkf21.cloudfront.net/assets';
+  window.assetsUrl = 'http://raw.githubusercontent.com/plainblack/Lacuna-Assets/master';
 
   ///////////
   // Menus //
