@@ -8,6 +8,8 @@ Implementation of this prototype was started in May 2015 and went live on the ma
 
 ![Screensoht](https://cloud.githubusercontent.com/assets/1539253/12375230/df0b09ec-bd0c-11e5-9ed9-b87ef77b3b2f.png)
 
+Unfortunately as of October 2016 the game has shut down. 
+
 # License
 
 MIT
